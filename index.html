@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Itim&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Pangolin&family=Patrick+Hand&family=Roboto+Slab&family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-img">
+        <img
+          src="https://www.pinecrestvet.com/wp-content/uploads/2019/12/pet-allergies-page-e1577381124287.jpg"
+          alt="Dog's image"
+        />
+      </div>
+      <div class="main-form">
+        <div class="logo">
+        <h1 id="heading">Yay, we love dogs! Give us the basics about your pup.</h1>
+        <img id="logo" class="hide-logo" src="image/icons8-paw-50.png" alt="">
+      </div>
+        <h1 id="hide" class="hide"></h1>
+        <form id="field" action="">
+          <div class="section">
+            <label for="name"
+              >Name
+              <input
+                class="name"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Pet's Name"
+                onkeyup="change()";
+                />
+                <div id="alerting" class="alert"><img class="alert-img" src="image/warning.png"><span class="alert-writting">Please Enter Name!</span></div>
+            </label>
+            <div class="section2">
+              <label class="file-image" for="image">
+                <img id="image" class="sticker" src="image/upload.png" alt="image-sticker" onclick="insertImage()">
+                <p class="nothing">Upload a photo</p>
+                <input type="file" class="sticker-img" id="sticker-img"
+                  name="image"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="section">
+            <label for="breed"
+              >Breed
+              <input
+              class=""
+                type="text"
+                id="breadname"
+                name="breadname"
+                placeholder="Pet's Breed"
+              />
+            </label>
+            <label class="left" for="birthday"
+              >Birthday
+              <input type="date" id="date" name="bdate" onclick="change(event)"/>
+              <div id="dating" class="alert"><img class="alert-img" src="image/warning.png"><span class="alert-writting">Please Enter The Birthdate!</span></div>
+            </label>
+          </div>
+          <div class="section">
+            <label class="gender">Gender</label>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"><span class="left-1">Female</span><span class="right-1">Male</span></span>
+            </label>
+                <label class="left" for="weight"
+                  >Weight
+                  <input
+                    class="weight"
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    placeholder="Pet's Weight in KG"
+                  />
+          </div>
+          <div class="footer">
+            <button type="button" class="first" onclick="reset()">Reset</button>
+            <button type="button" id="button" class="second" onclick="checking()">Submit</button>
+          </div>
+        </form>
+        <div id="hidden" class="result">
+          <fieldset>
+            <legend><strong>Pet's I-card</strong></legend>
+              <div class="hidden1">
+                <h5>Name:</h5>
+                <h6 id="pet" class="display"></h6>
+              </div>
+              <div class="hidden1">
+                <h5>Breed:</h5>
+                <h6 id="b" class="display"></h6>
+              </div>
+              <div class="hidden1">
+                <h5>Birthday:</h5>
+                <h6 id="dob" class="display"></h6>
+              </div>
+              <div class="hidden1">
+                <h5>Gender:</h5>
+                <h6 id="gen" class="display"></h6>
+              </div>
+              <div class="hidden1">
+                <h5>Weight:</h5>
+                <h6 id="wei" class="display"></h6>
+              </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      /*function change(event){
+        let name = event.target.value;
+        document.getElementById("alerting").style.display="none";
+        document.getElementById("dating").style.display="none";
+      }*/
+
+      function change(){
+        document.getElementById("alerting").style.display="none";
+        document.getElementById("dating").style.display="none";
+      }
+      function checking() {
+        let name = document.getElementById("name").value;
+        let dob = document.getElementById('date').value;
+        if(name == ""){
+          document.getElementById("alerting").style.display="flex";
+        }
+        else if(!dob) {
+          document.getElementById("dating").style.display="flex";
+        }
+        else{
+          checkForm();
+        }
+      }
+      function checkForm(){
+        let name = document.getElementById("name").value;
+        let bread = document.getElementById("breadname").value;
+        let gender;
+        let gen = document.querySelector('input[type="checkbox"]');
+        if(gen.checked){
+        gender = "Male";
+      }
+      else{
+        gender = "female";
+      }
+        let dob = document.getElementById('date').value.split("-");
+        let day = dob[2], month=dob[1], year=dob[0];
+        let date = `${day}. ${month}. ${year}`;
+        let weight = document.getElementById('weight').value;
+        let today = new Date();
+        let d = String(today.getDate()).padStart(2, '0');
+        let mon = String(today.getMonth() + 1).padStart(2, '0');
+        if(day== d && month == mon){
+          document.getElementById("hide").style.opacity=1;
+          document.getElementById('hide').textContent = "Happy Birthday " + name +"! 🎂 ";
+        }
+        document.getElementById("heading").textContent = "Hi "+ name +" , Welcome to the Pawland ";
+        document.getElementById("logo").style.opacity="1";
+        document.getElementById("field").style.display="none";
+        document.getElementById("hidden").style.display="inline";
+        document.getElementById("pet").textContent = name;
+        document.getElementById('b').textContent = bread;
+        document.getElementById('dob').textContent = date;
+        document.getElementById('gen').textContent = gender;
+        document.getElementById('wei').textContent = weight + "KG";
+        /*let today = new Date();
+        var day = String(today.getDate()).padStart(2, '0');
+        var mon = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var year = today.getFullYear();
+        let difYear = year - dob[0];
+        let difMon = Math.abs(Number(mon) - dob[1]);
+        let difDay = Math.abs(Number(day) - dob[2]);*/
+      }
+
+      function insertImage(){
+       let clicking = document.getElementById("sticker-img");
+       clicking.click();
+      }
+
+      function reset(){
+        document.getElementById("name").textContent="";
+        document.getElementById("breadname").textContent="";
+        document.getElementById("date").textContent="";
+        document.getElementById("weight").textContent="";
+        document.getElementById("gender").textContent="";
+      }
+    </script>
+  </body>
+</html>

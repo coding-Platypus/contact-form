@@ -1,0 +1,269 @@
+.container {
+  display: flex;
+}
+
+.main-img {
+  width: 40%;
+  height: 100%;
+}
+
+.main-img > img {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.main-form {
+  background-color: #f8e8ee;
+}
+body {
+  background-color: #f8e8ee;
+}
+
+* {
+  margin: 0;
+}
+h1 {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+
+  margin-bottom: 4rem;
+  margin-top: 2.5rem;
+}
+
+input {
+  height: 2.3rem;
+  width: 20rem;
+  font-family: 'Roboto Slab', serif;
+  color: #9db2bf;
+  border-style: none;
+  display: block;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+}
+
+label {
+  display: inline-block;
+  margin-left: 1rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 22rem;
+  height: 2.7rem;
+  margin-top: 1.8rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.slider:before {
+  position: absolute;
+  content: 'Female';
+  padding-top: 0.4rem;
+  font-family: 'Outfit', sans-serif;
+  color: #27374d;
+  text-align: center;
+  height: 1.7rem;
+  width: 12rem;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 4px;
+  background-color: #f2bed1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #fff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(9.5rem);
+  -ms-transform: translateX(9.5rem);
+  transform: translateX(9.5rem);
+  content: 'Male';
+}
+
+.section {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.sticker {
+  height: 3.7rem;
+  width: 3.7rem;
+  padding-left: 1.2rem;
+  margin-top: 0.7rem;
+  cursor: pointer;
+}
+
+.section2 {
+  display: flex;
+}
+.nothing {
+  font-family: 'Roboto Slab', serif;
+  display: inline;
+  padding-top: 1.6rem;
+  padding-left: 1rem;
+  color: #9db2bf;
+}
+
+.gender {
+  display: flex;
+  position: absolute;
+  left: 2;
+}
+
+.left {
+  margin-left: 3rem;
+}
+.left-1 {
+  margin-right: 3rem;
+  padding-left: 2.5rem;
+  margin-top: 5rem;
+}
+.right-1 {
+  margin-left: 7rem;
+}
+
+.second {
+  border-radius: 2rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: #27374d;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  margin-left: 25.5rem;
+}
+.second:active {
+  border-color: #27374d;
+  border-style: solid;
+  color: #27374d;
+  background-color: #fff;
+}
+
+.second:hover {
+  border-color: #27374d;
+  border-style: solid;
+  color: #27374d;
+  background-color: #fff;
+}
+
+.first {
+  border-radius: 2rem;
+  border-color: #27374d;
+  border-style: solid;
+  color: #27374d;
+  background-color: #fff;
+  width: 7rem;
+  height: 2rem;
+  margin-left: 4.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.first:hover {
+  background-color: #dde6ed;
+}
+
+.first:active {
+  background-color: #27374d;
+  color: #fff;
+}
+.result {
+  height: 10rem;
+  width: 100%;
+  font-family: 'dancing script', cursive;
+  color: #202021;
+  font-size: 2rem;
+  display: none;
+}
+.sticker-img {
+  display: none;
+}
+.file-image {
+  display: flex;
+}
+h5 {
+  display: inline;
+}
+
+.display {
+  display: inline-block;
+}
+
+h6 {
+  color: #454549;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+  font-family: 'dancing script', cursive;
+}
+.hidden1 {
+  padding: 1rem;
+}
+
+fieldset {
+  border-radius: 1rem;
+}
+
+legend {
+  text-align: center;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  color: tomato;
+}
+.alert-img {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+.alert {
+  margin-top: 0.5rem;
+  color: red;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  display: none;
+}
+
+.alert-writting {
+  padding-left: 0.5rem;
+}
+
+.hide-logo {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding-left: 0.8rem;
+  padding-top: 2.3rem;
+  opacity: 0;
+}
+.logo {
+  display: flex;
+  height: 5.5rem;
+}
